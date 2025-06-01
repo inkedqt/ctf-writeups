@@ -122,4 +122,4 @@ ssh -i id_rsa root@localhost
 
 ---
 
-*Report by [Your Name] – [Portfolio or GitHub Link]*
+Report by inksec – https://github.com/inkedqt/

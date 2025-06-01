@@ -21,7 +21,9 @@
 
 ## 🧰 Tools & Skills
 
-`Linux` `Nmap` `Burp Suite` `Python` `Reverse Shells` `Post-Exploitation` `LFI` `SQLi`
+`Linux` `Burp Suite` `Nmap` `ffuf` `Gobuster` `Python` `Markdown XSS` `Base64 Exfiltration`  
+`Reverse Shells` `Privilege Escalation` `LFI` `SQLite` `Hashcat` `Password Cracking`  
+`Post-Exploitation` `Group Permission Abuse` `PHP Scripting` `SSH Enumeration`
 
 ---
 

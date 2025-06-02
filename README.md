@@ -14,41 +14,22 @@
 
 ## 🚩 Featured Writeups
 
-# 🏅 Featured HTB Writeups
+- 🧪 [HTB: Chemistry](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/chemistry)  
+  Remote file parsing → RCE via pymatgen, local file inclusion, and SSH key abuse
 
-A curated list of completed Hack The Box machines demonstrating various attack vectors, tools, and techniques. Great for referencing commands and learning progression.
+- 🛎️ [HTB: Alert](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/alert)  
+  Advanced Markdown XSS → Base64 exfil → LFI → Group permission privesc
 
----
+- 🧱 [HTB: Lame](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/lame)  
+  Classic Linux box exploited via Samba usermap script (Metasploit)
 
-### ✅ [Lame (10.10.10.3)](HTB/lame/README.md)
-- **OS:** Linux
-- **Vector:** Metasploit – Samba Usermap Script (CVE-2007-2447)
-- **Flags:** User + Root
-- **Notes:** First HTB box. Gained root via Samba exploit using Metasploit.
+- 💙 [HTB: Blue](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/blue)  
+  EternalBlue exploit (MS17-010) on Windows 7, gaining full SYSTEM access
 
----
-
-### ✅ [Blue (10.10.10.40)](HTB/blue/README.md)
-- **OS:** Windows
-- **Vector:** EternalBlue RCE (MS17-010)
-- **Flags:** User + Root
-- **Notes:** Classic Metasploit exploitation. Full SYSTEM shell via SMBv1.
+- ⚙️ [HTB: Optimum](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/optimum)  
+  Rejetto HFS exploit + WinPEAS + local exploit suggester for SYSTEM shell
 
 ---
-
-### ✅ [Optimum (10.10.10.8)](HTB/optimum/README.md)
-- **OS:** Windows
-- **Vector:** Rejetto HFS RCE (CVE-2014-6287), privilege escalation with local exploit suggester
-- **Flags:** User + Root
-- **Notes:** Excellent example of post-exploitation workflow in Metasploit.
-
----
-
-*Stay tuned for more writeups as I work through Hack The Box!*
-
----
-
-## 🧰 Tools & Skills
 
 ## 🧰 Tools & Skills
 

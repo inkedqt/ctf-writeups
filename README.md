@@ -50,9 +50,13 @@ A curated list of completed Hack The Box machines demonstrating various attack v
 
 ## 🧰 Tools & Skills
 
-`Linux` `Burp Suite` `Nmap` `ffuf` `Gobuster` `Python` `Markdown XSS` `Base64 Exfiltration`  
-`Reverse Shells` `Privilege Escalation` `LFI` `SQLite` `Hashcat` `Password Cracking`  
-`Post-Exploitation` `Group Permission Abuse` `PHP Scripting` `SSH Enumeration`
+## 🧰 Tools & Skills
+
+`Linux` `Windows` `Burp Suite` `Nmap` `ffuf` `Gobuster` `Python` `PHP`  
+`Markdown XSS` `Base64 Exfiltration` `LFI` `SQLite` `Reverse Shells`  
+`Privilege Escalation` `Group Permission Abuse` `Metasploit` `WinPEAS`  
+`SMB Enumeration` `Hashdump` `Password Cracking` `Local Exploit Suggester`  
+`EternalBlue` `Rejetto HFS` `CVE Hunting` `SSH Enumeration`
 
 ---
 

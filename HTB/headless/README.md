@@ -33,6 +33,21 @@ nmap -p 5000,22 -sC -sV headless.htb -oN nmap_alert
 
 ---
 
+## 🚪 Gobuster Discovery
+
+While testing XSS in the form, run Gobuster in background to enumerate paths:
+
+```bash
+gobuster dir -u http://headless.htb:5000 -w /usr/share/wordlists/dirb/big.txt
+```
+
+**Discovery:**
+```
+/dashboard            (Status: 500)
+```
+
+---
+
 ## 🧪 Blind XSS via User-Agent
 
 ### Step 1: Test XSS
@@ -151,6 +166,7 @@ bd2d4eb12d06b81cc888cef32e370f68
 - XSS in headers can be powerful for stealing cookies
 - `sudo -l` is crucial post-exploitation
 - Poor script hygiene (like `./initdb.sh`) leads to easy root
+- Gobuster helps uncover hidden paths like `/dashboard`
 
 ---
 

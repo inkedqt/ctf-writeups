@@ -14,9 +14,12 @@
 
 ## 🚩 Featured Writeups
 
+- 🪄 [HTB: Trick](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Trick)  
+  DNS & vHost discovery → SQLi + file read → LFI to RCE via email injection → PrivEsc with writable fail2ban config → Root shell
 
 - 🏰 [HTB: Administrator](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Administrator)  
   Full Active Directory domain takeover via WinRM foothold → ACL abuse → password spraying → Kerberoast → DCSync → Administrator hash  
+  
 - 🧠 [HTB: Headless](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/headless)  
   Blind XSS in User-Agent header → Cookie theft → Command injection → Root via sudo script path hijack
 

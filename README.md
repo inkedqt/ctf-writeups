@@ -5,6 +5,7 @@ I'm inkedQT a cyber security student at VU in Melbourne Australia.
 Welcome to my collection of CTF writeups and learning progress. This repo tracks boxes I've completed across various platforms including Hack The Box, HTB Academy, and others.
 
 I want to document my learning progression and maintain a reference of commands and techniques used in completed boxes for future reference.
+
 ---
 
 ## 🚩 Featured Writeups

@@ -1,44 +1,67 @@
+# HTB Starting Point - Tier 2 Summary
 
-# HTB Starting Point - Tier 2
-
-**Platform:** Hack The Box  
-**Track:** Starting Point Tier 2  
-**Difficulty:** Introductory / Beginner-Friendly  
+- ✅ Completed Boxes: - ✅ Archetype - ✅ Oopsie - ✅ Vaccine - ✅ Unified - ✅ Included - ✅ Markup - ✅ Base
 
 ---
 
 ## Overview
 
-This tier builds on the basics of Tier 0 and Tier 1 and introduces additional techniques including more advanced web exploitation, JWT cracking, LFI and XXE attacks, SUID privilege escalation, and SMB/WinRM flows.
+HTB Starting Point Tier 2 builds on the skills of Tier 0 and Tier 1 by introducing more complex web vulnerabilities, horizontal privilege escalation, JWT exploitation, advanced LFI and XXE techniques, and privilege escalation via SUID binaries and misconfigurations.
+
+The goal is to expand your ability to exploit real-world web applications and perform effective post-exploitation on Linux systems.
 
 ---
 
-## Completed Boxes
+## Box Summaries
 
-| Box Name    | Status   | Notes |
-|-------------|----------|-------|
-| Archetype   |          | SMB enumeration → credentials → WinRM foothold |
-| Oopsie      |          | File upload vulnerability → RCE via uploaded PHP |
-| Vaccine     |          | Local file inclusion → privilege escalation via sudo misconfig |
-| Unified     |          | JWT cracking → admin access → reverse shell |
-| Included    |          | XXE injection → LFI → RCE via malicious XML |
-| Markup      |          | LFI → reading sensitive files → SSH access |
-| Base        |          | SUID binary privilege escalation → root shell |
+**Archetype**  
+SMB enumeration → credential reuse → WinRM foothold
+
+**Oopsie**  
+File upload vulnerability → RCE via uploaded PHP shell
+
+**Vaccine**  
+Local File Inclusion (LFI) → Privilege escalation via sudo misconfiguration
+
+**Unified**  
+JWT cracking → Admin access → Reverse shell
+
+**Included**  
+XXE injection → LFI → RCE via malicious XML payload
+
+**Markup**  
+LFI exploitation → Reading sensitive files → SSH access
+
+**Base**  
+Privilege escalation via SUID binary → Root shell
 
 ---
 
-## Techniques & Tools Practiced
+## Key Skills Learned
 
-- SMB enumeration & WinRM flow  
-- File upload exploitation (RCE)  
-- JWT cracking & manipulation  
-- XXE injection  
-- Advanced LFI exploitation  
-- SUID privilege escalation  
-- Reverse shell techniques  
-- Post-exploitation enumeration  
+- SMB enumeration and attacking Windows targets
+- JWT cracking and abuse
+- XXE injection
+- Advanced LFI exploitation
+- File upload exploitation → RCE
+- SUID binary privilege escalation
+- Horizontal privilege escalation
+- Web application post-exploitation techniques
+
+---
+
+## Lessons Learned
+
+Tier 2 represents a jump in difficulty compared to earlier tiers:
+
+- Many boxes require chaining multiple vulnerabilities (LFI → RCE, XXE → LFI → RCE, JWT → privesc)
+- Deeper understanding of Linux privilege escalation techniques (SUID, sudo misconfig, PATH hijacking)
+- Realistic web attack chains (JWT, file upload RCE, XXE)
+- More post-exploitation focus — not just getting the shell but getting **root** consistently
+
+Completing Tier 2 gives a solid foundation for moving into Retired and Academy boxes where you'll encounter these techniques regularly.
 
 ---
 
 *Writeup by inksec*  
-*GitHub: [https://github.com/inkedqt]*  
+*GitHub: [https://github.com/inkedqt]*

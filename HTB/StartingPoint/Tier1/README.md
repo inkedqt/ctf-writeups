@@ -1,16 +1,16 @@
 # HTB Starting Point - Tier 1 Summary
 
-✅ Completed Boxes:
-- Appointment
-- Sequel
-- Crocodile
-- Responder
-- Three
-- Ignition
-- Bike
-- Funnel
-- Pennyworth
-- Tactics
+-✅ Completed Boxes:
+-✅ Appointment
+-✅ Sequel
+-✅ Crocodile
+-✅ Responder
+-✅ Three
+-✅ Ignition
+-✅ Bike
+-✅ Funnel
+-✅ Pennyworth
+-✅ Tactics
 
 ---
 

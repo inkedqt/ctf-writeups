@@ -38,6 +38,8 @@
 - ⚙️ [HTB: Optimum](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Optimum)  
   Rejetto HFS exploit + WinPEAS + local exploit suggester for SYSTEM shell
 
+- 🎓 [HTB Starting Point - Tier 0](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/StartingPoint/Tier0)  
+  Meow • Fawn • Dancing • Redeemer • Explosion • Preignition • Mongod • Synced — foundational service enumeration, web fuzzing, password cracking & DB abuse.
 ---
 
 ## 🧰 Tools & Skills

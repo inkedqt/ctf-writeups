@@ -40,6 +40,9 @@
 
 - 🎓 [HTB Starting Point - Tier 0](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/StartingPoint/Tier0)  
   Meow • Fawn • Dancing • Redeemer • Explosion • Preignition • Mongod • Synced — foundational service enumeration, web fuzzing, password cracking & DB abuse.
+
+- 🎓 [HTB Starting Point - Tier 1](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/StartingPoint/Tier1)  
+  Appointment • Sequel • Crocodile • Responder • Three • Ignition • Bike • Funnel • Pennyworth • Tactics — web exploitation, SQLi, SMB attacks, Responder, priv esc & credential abuse.
 ---
 
 ## 🧰 Tools & Skills

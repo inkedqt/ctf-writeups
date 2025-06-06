@@ -1,6 +1,6 @@
 
-# CTF Writeups by inkedQT
-I'm inkedQT a cyber security student at VU in Melbourne Australia.
+# Cyber Security portfolio
+I'm Tate Pannam a cyber security student at VU in Melbourne Australia.
 
 Welcome to my collection of CTF writeups and learning progress. This repo tracks boxes I've completed across various platforms including Hack The Box, HTB Academy, and others.
 

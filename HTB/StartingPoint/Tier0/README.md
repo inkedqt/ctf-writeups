@@ -1,15 +1,15 @@
 
 # HTB Starting Point - Tier 0 Summary
 
-✅ Completed Boxes:
-- Meow
-- Fawn
-- Dancing
-- Redeemer
-- Explosion
-- Preignition
-- Mongod
-- Synced
+-✅ Completed Boxes:
+-✅ Meow
+-✅ Fawn
+-✅ Dancing
+-✅ Redeemer
+-✅ Explosion
+-✅ Preignition
+-✅ Mongod
+-✅ Synced
 
 ---
 

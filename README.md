@@ -54,17 +54,17 @@ I want to document my learning progression and maintain a reference of commands 
 
 ### 🕵️ Discovery & Enumeration
 `Nmap` `ffuf` `Gobuster` `Telnet` `FTP` `Redis` `MongoDB` `Rsync` `LDAP Enumeration` `Responder`  
-`SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow` `Burp Suite` `Intruder`
+`SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow` `Port Enumeration (ss / netstat)`  
 
 ### ⚔️ Exploitation
-`SQL Injection` `Markdown XSS` `Base64 Exfiltration` `LFI` `Path Traversal` `Reverse Shells` `File Upload Exploitation` `File Upload RCE`  
+`SQL Injection` `Markdown XSS` `Base64 Exfiltration` `LFI` `Reverse Shells` `File Upload Exploitation`  
 `Credential Reuse` `Privilege Escalation` `Group Permission Abuse` `SUID Binaries` `CVE Hunting`  
-`JWT Cracking` `XXE Injection` `Advanced LFI` `Server-Side Request Forgery (SSRF)` `Command Injection`  
-`Access Control Bypass` `Insecure Direct Object Reference (IDOR)` `Authentication Bypass` `2FA Bypass`
+`JWT Cracking` `XXE Injection` `Advanced LFI` `File Upload Exploitation` `SUID Binaries`  
+`Path Traversal` `Restricted Shell Bypass (rbash)` `Linux Capabilities Abuse` `Binary Abuse`  
 
 ### 🛠️ Post-Exploitation & Tools
-`Python` `PHP` `SQLite` `Metasploit` `WinPEAS` `Local Exploit Suggester`  
-`SMB Hash Cracking` `Password Cracking` `Zip Cracking` `EternalBlue` `Rejetto HFS`
+`Burp Suite` `Python` `PHP` `SQLite` `Metasploit` `WinPEAS` `Local Exploit Suggester`  
+`SMB Hash Cracking` `Password Cracking` `Zip Cracking` `EternalBlue` `Rejetto HFS` `getcap`
 
 ---
 

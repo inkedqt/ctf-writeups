@@ -50,7 +50,7 @@ I want to document my learning progression and maintain a reference of commands 
   Archetype • Oopsie • Vaccine • Unified • Included • Markup • Base — SMB enumeration, file upload exploitation, JWT cracking, XXE injection, LFI, SUID privesc, advanced web enumeration & post-exploitation.
 
 ## Active Boxes
-- 🚢 [HTB: Titanic (Active, Private Repo)](https://github.com/inkedqt/ctf-active)  
+- 🚢 [HTB: Titanic (Active, Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Titanic)  
   LFI on ticket download → SQLite DB dump → Gitea password hash crack → SSH as developer → ImageMagick identify RCE via cron → LD_PRELOAD SUID bypass → Root shell
 ---
 

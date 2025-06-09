@@ -34,6 +34,9 @@ I want to document my learning progression and maintain a reference of commands 
 - ⚙️ [HTB: Optimum](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Optimum)  
   Rejetto HFS exploit + WinPEAS + local exploit suggester for SYSTEM shell
 
+- 🌐 [PortSwigger: Server-Side Vulnerabilities](https://github.com/inkedqt/ctf-writeups/tree/main/Other/PortSwigger-Labs/ServerSideVulns)  
+  Path Traversal • Access Control • IDOR • Auth bypass • SSRF • File Upload RCE • Command Injection • SQLi — common web vulns & practical exploitation.
+
 - 🎓 [HTB Starting Point - Tier 0](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/StartingPoint/Tier0)  
   Meow • Fawn • Dancing • Redeemer • Explosion • Preignition • Mongod • Synced — foundational service enumeration, web fuzzing, password cracking & DB abuse.
 
@@ -49,15 +52,16 @@ I want to document my learning progression and maintain a reference of commands 
 
 ### 🕵️ Discovery & Enumeration
 `Nmap` `ffuf` `Gobuster` `Telnet` `FTP` `Redis` `MongoDB` `Rsync` `LDAP Enumeration` `Responder`  
-`SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow`
+`SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow` `Burp Suite` `Intruder`
 
 ### ⚔️ Exploitation
-`SQL Injection` `Markdown XSS` `Base64 Exfiltration` `LFI` `Reverse Shells` `File Upload Exploitation`  
-`Credential Reuse` `Privilege Escalation` `Group Permission Abuse` `SUID Binaries` `CVE Hunting`
-`JWT Cracking` `XXE Injection` `Advanced LFI` `File Upload Exploitation` `SUID Binaries`  
+`SQL Injection` `Markdown XSS` `Base64 Exfiltration` `LFI` `Path Traversal` `Reverse Shells` `File Upload Exploitation` `File Upload RCE`  
+`Credential Reuse` `Privilege Escalation` `Group Permission Abuse` `SUID Binaries` `CVE Hunting`  
+`JWT Cracking` `XXE Injection` `Advanced LFI` `Server-Side Request Forgery (SSRF)` `Command Injection`  
+`Access Control Bypass` `Insecure Direct Object Reference (IDOR)` `Authentication Bypass` `2FA Bypass`
 
 ### 🛠️ Post-Exploitation & Tools
-`Burp Suite` `Python` `PHP` `SQLite` `Metasploit` `WinPEAS` `Local Exploit Suggester`  
+`Python` `PHP` `SQLite` `Metasploit` `WinPEAS` `Local Exploit Suggester`  
 `SMB Hash Cracking` `Password Cracking` `Zip Cracking` `EternalBlue` `Rejetto HFS`
 
 ---

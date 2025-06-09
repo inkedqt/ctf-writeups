@@ -9,6 +9,8 @@ I want to document my learning progression and maintain a reference of commands 
 ---
 
 ## 🚩 Featured Writeups
+- 🔍 [HTB: Waldo](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Waldo)  
+  LFI → Read SSH key → Rbash escape → Capabilities abuse (`cap_dac_read_search`) → Root flag via `tac`
 
 - 🪄 [HTB: Trick](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Trick)  
   DNS & vHost discovery → SQLi + file read → LFI to RCE via email injection → PrivEsc with writable fail2ban config → Root shell

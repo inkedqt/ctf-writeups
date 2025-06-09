@@ -9,6 +9,7 @@ I want to document my learning progression and maintain a reference of commands 
 ---
 
 ## 🚩 Featured Writeups
+
 - 🔍 [HTB: Waldo](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Waldo)  
   LFI → Read SSH key → Rbash escape → Capabilities abuse (`cap_dac_read_search`) → Root flag via `tac`
 
@@ -48,23 +49,29 @@ I want to document my learning progression and maintain a reference of commands 
 - 🎓 [HTB Starting Point - Tier 2](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/StartingPoint/Tier2)  
   Archetype • Oopsie • Vaccine • Unified • Included • Markup • Base — SMB enumeration, file upload exploitation, JWT cracking, XXE injection, LFI, SUID privesc, advanced web enumeration & post-exploitation.
 
+## Active Boxes
+- 🚢 [HTB: Titanic (Active, Private Repo)](https://github.com/inkedqt/ctf-active)  
+  LFI on ticket download → SQLite DB dump → Gitea password hash crack → SSH as developer → ImageMagick identify RCE via cron → LD_PRELOAD SUID bypass → Root shell
 ---
 
 ## 🧰 Tools & Skills
 
 ### 🕵️ Discovery & Enumeration
 `Nmap` `ffuf` `Gobuster` `Telnet` `FTP` `Redis` `MongoDB` `Rsync` `LDAP Enumeration` `Responder`  
-`SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow` `Port Enumeration (ss / netstat)`  
+`SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow` `LFI` `ffuf DNS bruteforce`  
+`sqlite3 enumeration` `docker-compose parsing` `Flask app source review`
 
 ### ⚔️ Exploitation
-`SQL Injection` `Markdown XSS` `Base64 Exfiltration` `LFI` `Reverse Shells` `File Upload Exploitation`  
+`SQL Injection` `Markdown XSS` `Base64 Exfiltration` `Reverse Shells` `File Upload Exploitation`  
 `Credential Reuse` `Privilege Escalation` `Group Permission Abuse` `SUID Binaries` `CVE Hunting`  
-`JWT Cracking` `XXE Injection` `Advanced LFI` `File Upload Exploitation` `SUID Binaries`  
-`Path Traversal` `Restricted Shell Bypass (rbash)` `Linux Capabilities Abuse` `Binary Abuse`  
+`JWT Cracking` `XXE Injection` `Advanced LFI` `PBKDF2-SHA256 cracking (mode 10900)`  
+`ImageMagick identify LD_PRELOAD abuse` `LD_PRELOAD bypass via .so hijack` `Systemd service discovery`
 
 ### 🛠️ Post-Exploitation & Tools
 `Burp Suite` `Python` `PHP` `SQLite` `Metasploit` `WinPEAS` `Local Exploit Suggester`  
-`SMB Hash Cracking` `Password Cracking` `Zip Cracking` `EternalBlue` `Rejetto HFS` `getcap`
+`SMB Hash Cracking` `Password Cracking` `Zip Cracking` `EternalBlue` `Rejetto HFS`  
+`gitea2hashcat` `Gitea DB extraction` `sqlite3` `getcap` `setcap` `gcc -fPIC -shared`  
+`LD_PRELOAD` `Systemd .service analysis`
 
 ---
 

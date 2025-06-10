@@ -52,6 +52,13 @@ I want to document my learning progression and maintain a reference of commands 
 ## Active Boxes
 - 🚢 [HTB: Titanic (Active, Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Titanic)  
   LFI on ticket download → SQLite DB dump → Gitea password hash crack → SSH as developer → ImageMagick identify RCE via cron → LD_PRELOAD SUID bypass → Root shell
+
+### TombWatcher (Active Seasonal Box)
+
+🗂️ [/HTB/Active/Tombwatcher/README.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  
+📝 Windows AD box — gMSA abuse → ACL pivot → Deleted object restore → CVE-2024-49019 → Domain Admin  
+🏅 User + Root obtained
+
 ---
 
 ## 🧰 Tools & Skills

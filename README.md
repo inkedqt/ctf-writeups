@@ -57,28 +57,33 @@ I want to document my learning progression and maintain a reference of commands 
 
 🗂️ [/HTB/Active/Tombwatcher/README.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  
 📝 Windows AD box — gMSA abuse → ACL pivot → Deleted object restore → CVE-2024-49019 → Domain Admin  
-🏅 User + Root obtained
+
+Fluffy (Active Seasonal Box)  
+🗂️ [/HTB/Active/Fluffy/README_Fluffy_AD_Domain_Takeover.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Fluffy)  
+📝 Windows AD box — NTLMv2 crack → Shadow Credentials abuse → ADCS certificate template enumeration → Certificate template abuse (ESC1) → Pass-the-Cert + Pass-the-Hash → Domain Admin  
 
 ---
 
 ## 🧰 Tools & Skills
 
-### 🕵️ Discovery & Enumeration
-`Nmap` `ffuf` `Gobuster` `Telnet` `FTP` `Redis` `MongoDB` `Rsync` `LDAP Enumeration` `Responder`  
+### 🕵️ Discovery & Enumeration  
+`Nmap` `ffuf` `Gobuster` `Telnet` `FTP` `Redis` `MongoDB` `Rsync` `LDAP Enumeration` `BloodHound` `Responder`  
 `SMB Enumeration` `SMB Relay` `SSH Enumeration` `SMB to WinRM flow` `LFI` `ffuf DNS bruteforce`  
-`sqlite3 enumeration` `docker-compose parsing` `Flask app source review`
+`sqlite3 enumeration` `docker-compose parsing` `Flask app source review` `Kerberos Ticket Analysis` `Certificate Authority Enumeration`
 
-### ⚔️ Exploitation
+### ⚔️ Exploitation  
 `SQL Injection` `Markdown XSS` `Base64 Exfiltration` `Reverse Shells` `File Upload Exploitation`  
 `Credential Reuse` `Privilege Escalation` `Group Permission Abuse` `SUID Binaries` `CVE Hunting`  
 `JWT Cracking` `XXE Injection` `Advanced LFI` `PBKDF2-SHA256 cracking (mode 10900)`  
-`ImageMagick identify LD_PRELOAD abuse` `LD_PRELOAD bypass via .so hijack` `Systemd service discovery`
+`ImageMagick identify LD_PRELOAD abuse` `LD_PRELOAD bypass via .so hijack` `Systemd service discovery`  
+`Shadow Credentials Abuse` `ADCS Certificate Template Abuse (ESC1/ESC13)` `Pass-the-Cert` `Pass-the-Hash` `Kerberos Ticket Caching & Reuse`
 
-### 🛠️ Post-Exploitation & Tools
+### 🛠️ Post-Exploitation & Tools  
 `Burp Suite` `Python` `PHP` `SQLite` `Metasploit` `WinPEAS` `Local Exploit Suggester`  
 `SMB Hash Cracking` `Password Cracking` `Zip Cracking` `EternalBlue` `Rejetto HFS`  
 `gitea2hashcat` `Gitea DB extraction` `sqlite3` `getcap` `setcap` `gcc -fPIC -shared`  
-`LD_PRELOAD` `Systemd .service analysis`
+`LD_PRELOAD` `Systemd .service analysis` `Certipy` `BloodyAD` `Evil-WinRM` `Impacket-Secretsdump`
+
 
 ---
 

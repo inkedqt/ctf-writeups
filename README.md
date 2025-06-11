@@ -62,6 +62,8 @@ Fluffy (Active Seasonal Box)
 🗂️ [/HTB/Active/Fluffy/README_Fluffy_AD_Domain_Takeover.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Fluffy)  
 📝 Windows AD box — NTLMv2 crack → Shadow Credentials abuse → ADCS certificate template enumeration → Certificate template abuse (ESC1) → Pass-the-Cert + Pass-the-Hash → Domain Admin  
 
+🚀 HTB: Puppy (Seasonal Box)(https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Puppy)  
+Medium Windows AD box — LDAP enumeration → SMB share access via group membership abuse → KeePass database password cracking → Password reset on disabled user → DPAPI credential extraction → Secretsdump for NTDS.dit extraction → Administrator NT hash → Evil-WinRM → U User + Root obtained  
 ---
 
 ## 🧰 Tools & Skills

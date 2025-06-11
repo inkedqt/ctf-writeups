@@ -66,6 +66,11 @@ Puppy (Seasonal Box)
 - 🚀 [/HTB/Active/Puppy/README.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Puppy)  
 Medium Windows AD box — LDAP enumeration → SMB share access via group membership abuse → KeePass database password cracking → Password reset on disabled user → DPAPI credential extraction → Secretsdump for NTDS.dit extraction → Administrator NT hash → Evil-WinRM → U User + Root obtained  
 
+Certificate (Seasonal box)
+- 🔐 [/HTB/Active/Certificate/README.md](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Certificate)  
+  LDAP enumeration → BloodHound → Certificate template abuse → Certipy cert forging → Evil-WinRM Administrator shell → Root flag  
+
+
 ---
 
 ## 🧰 Tools & Skills

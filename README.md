@@ -37,8 +37,8 @@ I want to document my learning progression and maintain a reference of commands 
 - ⚙️ [HTB: Optimum](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Optimum)  
   Rejetto HFS exploit + WinPEAS + local exploit suggester for SYSTEM shell
 
-- 🔍 [HTB: Bashed](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Bashed)  
-  Fuzzing directories → PHP bash shell → Reverse shell as www-data → Sudo to scriptmanager → Python reverse shell as root → Root flag
+- 🧪 [HTB: Bashed](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Bashed)  
+  Web fuzzing → PHPbash webshell → User enumeration → Sudo to scriptmanager → Privileged script abuse → Reverse shell as root
 
 - 🔊 [HTB: Beep](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Beep)  
   LFI in vtigerCRM → /etc/amportal.conf credential loot → Legacy SSH algorithms → Root via reused password

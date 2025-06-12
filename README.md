@@ -55,28 +55,30 @@ I want to document my learning progression and maintain a reference of commands 
 - 🎓 [HTB Starting Point - Tier 2](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/StartingPoint/Tier2)  
   Archetype • Oopsie • Vaccine • Unified • Included • Markup • Base — SMB enumeration, file upload exploitation, JWT cracking, XXE injection, LFI, SUID privesc, advanced web enumeration & post-exploitation.
 
-## Active Boxes
-- 🚢 [HTB: Titanic (Active, Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Titanic)  
+## Active Boxes  
+🔒 Writeups for active boxes are kept in a private repo to comply with HTB rules — they’ll be made public once the boxes are retired and spoilers are permitted.
+
+- 🚢 [HTB: Titanic, (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Titanic)  
   LFI on ticket download → SQLite DB dump → Gitea password hash crack → SSH as developer → ImageMagick identify RCE via cron → LD_PRELOAD SUID bypass → Root shell
 
-- 🧠 [HTB: Planning](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Planning)  
+- 🧠 [HTB: Planning, (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Planning)  
   Subdomain brute force → Grafana RCE → Docker breakout → SSH credential reuse → Crontab UI abuse → Root shell via SUID bash
 
-### (Active Seasonal Boxs)
+### (Active Seasonal Boxes)
 Tomewalker (Seasonal Box)
-- 🗂️ [/HTB/Active/Tombwatcher/README.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  
+- 🗂️ [/HTB/Active/Tombwatcher/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  
 📝 Windows AD box — gMSA abuse → ACL pivot → Deleted object restore → CVE-2024-49019 → Domain Admin  
 
 Fluffy (Active Seasonal Box)  
-- 🗂️ [/HTB/Active/Fluffy/README.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Fluffy)  
+- 🗂️ [/HTB/Active/Fluffy/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Fluffy)  
 📝 Windows AD box — NTLMv2 crack → Shadow Credentials abuse → ADCS certificate template enumeration → Certificate template abuse (ESC1) → Pass-the-Cert + Pass-the-Hash → Domain Admin  
 
 Puppy (Seasonal Box)
-- 🚀 [/HTB/Active/Puppy/README.md](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Puppy)  
+- 🚀 [/HTB/Active/Puppy/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Puppy)  
 Medium Windows AD box — LDAP enumeration → SMB share access via group membership abuse → KeePass database password cracking → Password reset on disabled user → DPAPI credential extraction → Secretsdump for NTDS.dit extraction → Administrator NT hash → Evil-WinRM → U User + Root obtained  
 
 Certificate (Seasonal box)
-- 🔐 [/HTB/Active/Certificate/README.md](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Certificate)  
+- 🔐 [/HTB/Active/Certificate/README.md (Private Repo)](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Certificate)  
   LDAP enumeration → BloodHound → Certificate template abuse → Certipy cert forging → Evil-WinRM Administrator shell → Root flag  
 
 

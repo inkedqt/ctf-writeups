@@ -40,6 +40,9 @@ I want to document my learning progression and maintain a reference of commands 
 - 🔍 [HTB: Bashed](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Bashed)  
   Fuzzing directories → PHP bash shell → Reverse shell as www-data → Sudo to scriptmanager → Python reverse shell as root → Root flag
 
+- 🔊 [HTB: Beep](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Retired/Beep)  
+  LFI in vtigerCRM → /etc/amportal.conf credential loot → Legacy SSH algorithms → Root via reused password
+
 - 🌐 [PortSwigger: Server-Side Vulnerabilities](https://github.com/inkedqt/ctf-writeups/tree/main/Other/PortSwigger-Labs/ServerSideVulns)  
   Path Traversal • Access Control • IDOR • Auth bypass • SSRF • File Upload RCE • Command Injection • SQLi — common web vulns & practical exploitation.
 

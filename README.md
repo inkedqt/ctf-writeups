@@ -84,6 +84,9 @@ Certificate (Seasonal box)
 - 🐾 [/HTB/Active/Dog/README.md (Private Repo)](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Dog)  
   Git repo dump → Backdrop CMS login → CVE-2022-42092 RCE → SSH pivot via reused credentials → Privesc via bee PHP utility
 
+- 💻 [HTB: Code](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Code)  
+  Python Code Editor SQLi → MD5 hash crack → SSH user → Path traversal via backy.sh → Full `/root` tar extraction → SSH private key → Root
+
 ---
 
 ## 🧰 Tools & Skills

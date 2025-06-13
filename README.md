@@ -64,6 +64,12 @@ I want to document my learning progression and maintain a reference of commands 
 - 🧠 [HTB: Planning, (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Planning)  
   Subdomain brute force → Grafana RCE → Docker breakout → SSH credential reuse → Crontab UI abuse → Root shell via SUID bash
 
+- 🐾 [/HTB/Active/Dog/README.md (Private Repo)](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Dog)  
+  Git repo dump → Backdrop CMS login → CVE-2022-42092 RCE → SSH pivot via reused credentials → Privesc via bee PHP utility
+
+- 💻 [HTB: Code](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Code)  
+  Python Code Editor SQLi → MD5 hash crack → SSH user → Path traversal via backy.sh → Full `/root` tar extraction → SSH private key → Root
+  
 ### (Active Seasonal Boxes)
 Tomewalker (Seasonal Box)
 - 🗂️ [/HTB/Active/Tombwatcher/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  
@@ -80,12 +86,6 @@ Medium Windows AD box — LDAP enumeration → SMB share access via group member
 Certificate (Seasonal box)
 - 🔐 [/HTB/Active/Certificate/README.md (Private Repo)](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Certificate)  
   LDAP enumeration → BloodHound → Certificate template abuse → Certipy cert forging → Evil-WinRM Administrator shell → Root flag  
-
-- 🐾 [/HTB/Active/Dog/README.md (Private Repo)](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Dog)  
-  Git repo dump → Backdrop CMS login → CVE-2022-42092 RCE → SSH pivot via reused credentials → Privesc via bee PHP utility
-
-- 💻 [HTB: Code](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Code)  
-  Python Code Editor SQLi → MD5 hash crack → SSH user → Path traversal via backy.sh → Full `/root` tar extraction → SSH private key → Root
 
 ---
 

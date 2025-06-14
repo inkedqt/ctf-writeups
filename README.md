@@ -69,7 +69,10 @@ I want to document my learning progression and maintain a reference of commands 
 
 - 💻 [HTB: Code](https://github.com/inkedqt/ctf-writeups/tree/main/HTB/Active/Code)  
   Python Code Editor SQLi → MD5 hash crack → SSH user → Path traversal via backy.sh → Full `/root` tar extraction → SSH private key → Root
-  
+
+- 🌱 [/HTB/Retired/Environment/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Environment)  
+  Laravel env bypass → CVE-2024-52301 preprod login → Avatar upload CVE-2024-21546 → GPG key dump → Vault creds → Sudo BASH_ENV abuse → Root
+
 ### (Active Seasonal Boxes)
 Tomewalker (Seasonal Box)
 - 🗂️ [/HTB/Active/Tombwatcher/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  

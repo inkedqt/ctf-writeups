@@ -89,8 +89,8 @@ File disclosure via upload viewer → Username fuzzing via session hijack → .o
 
 
 ### (Active Seasonal Boxes)
-Tomewalker (Seasonal Box)
-- 🗂️ [/HTB/Active/Tombwatcher/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwalker)  
+Tomewatcher (Seasonal Box)
+- 🗂️ [/HTB/Active/Tombwatcher/README.md (Private Repo)](https://github.com/inkedqt/ctf-active/tree/main/HTB/Active/Tombwatcher)  
 📝 Windows AD box — gMSA abuse → ACL pivot → Deleted object restore → CVE-2024-49019 → Domain Admin  
 
 Fluffy (Active Seasonal Box)  

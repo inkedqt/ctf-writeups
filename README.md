@@ -7,6 +7,17 @@ Welcome to my collection of CTF writeups and learning progress. This repo tracks
 I want to document my learning progression and maintain a reference of commands and techniques used in completed boxes for future reference.
 
 ---
+## 📸 Completion Gallery
+
+Want to see which boxes I've conquered on Hack The Box?
+
+→ [View My HTB Status & Proof Gallery](https://github.com/inkedqt/ctf-active/tree/main/HTB/status/README.md)
+
+This includes:
+- ✅ Completion proofs
+- 📊 Difficulty + ratings
+- 🔗 Links to writeups (Released once machines move to retired)
+---
 
 ## 🚩 Featured Writeups
 

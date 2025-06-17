@@ -24,7 +24,7 @@ Each machine listed includes a proof image, a direct link to my full writeup, an
 
 ---
 
-## 🔓 Active HTB Machines
+## 🔒 Active HTB Machines this section is 🔒 private until the box retires. 🔒
 
 | Machine     | Difficulty | Status  | Proof                                                  | Writeup                                                                                             | Summary                                                        |
 |-------------|------------|---------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
@@ -37,7 +37,7 @@ Each machine listed includes a proof image, a direct link to my full writeup, an
 
 ---
 
-## 🗓️ Seasonal Boxes
+## 🗓️ Seasonal Boxes this section is 🔒 private until the box retires. 🔒
 
 | Machine       | Difficulty | Status  | Proof                                                  | Writeup                                                                                             | Summary                                                              |
 |---------------|------------|---------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|

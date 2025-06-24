@@ -127,7 +127,7 @@ When identify_images.sh runs, libxcb.so.1 is picked up by /usr/bin/magick identi
 Now:
 
 sudo cat /root/root.txt
-5a9613d27f17e6a182101e7589b535c3
+5a9613d27f17e6a182101e75xxxx
 
 🧪 Lessons Learned
 

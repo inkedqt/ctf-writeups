@@ -1,4 +1,4 @@
-🛡️ Voleur (HTB Retired)
+🛡️ Voleur (HTB Seasonal) Write up locked until box is retired as per HTB rules
 
 Status: ✅ Writeup Published  
 Difficulty: Medium  

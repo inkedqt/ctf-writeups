@@ -103,4 +103,4 @@ ssh Administrator@10.10.10.134
 
 ## 📸 Proof
 
-![bastion.png](proofs/bastion.png)
+![bastion.png](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/bastion.png)

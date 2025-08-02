@@ -3,8 +3,8 @@
 **Platform:** Hack The Box  
 **Difficulty:** Medium  
 **OS:** Linux  
-**Release Date:** 5 May 2022  
-**Author:** wh0am1root  
+**Release Date:** 27 Nov 2021  
+**Author:** webspl01t3r
 **Writeup by:** inkedQT  
 **User flag:** `e0a0c27b634bd51e0aee4cb0********`  
 **Root flag:** `ca86fe9edd53a27e61f96099********`

@@ -101,3 +101,4 @@ a3c43c727ec533f1387ef24134c8cea1
 ## 📷 Proof
 ![ClamAV Proof](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/pg_clamav.png)
 
+"Writeup and proof included in GitHub repo: https://github.com/inkedqt/ctf-writeups/tree/main/Other/PG/ClamAV"

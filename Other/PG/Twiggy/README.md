@@ -130,3 +130,4 @@ md5sum proof.txt
 - Root access immediately due to unauthenticated nature
 - Flag found at `/root/proof.txt`
 
+"Writeup and proof included in GitHub repo: https://github.com/inkedqt/ctf-writeups/tree/main/Other/PG/Twiggy"

@@ -69,6 +69,7 @@ nmap -sU -p161 --script "*snmp*" 192.168.228.42
 ### 📄 CVE-2007-4560 – ClamAV Milter Remote Command Execution
 - Found clamav-milter in SNMP output
 - Vulnerability: Improper handling of Sendmail `rcpt to:` parsing can be used to append commands to `/etc/inetd.conf`
+- Exploit reference: [CVE-2007-4560 – clamav-milter RCE via Sendmail](https://www.exploit-db.com/exploits/4761)
 
 ```bash
 perl CVE-2007-4560.pl 192.168.228.42
@@ -98,5 +99,5 @@ a3c43c727ec533f1387ef24134c8cea1
 ---
 
 ## 📷 Proof
-![ClamAV Proof](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/clamav.png)
+![ClamAV Proof](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/pg_clamav.png)
 

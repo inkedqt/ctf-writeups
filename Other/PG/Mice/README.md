@@ -107,4 +107,4 @@ type Desktop\proof.txt → `5124eb2ab003150adea6c56b12755753`
 - GUI privilege escalation with a service path or auto-start is viable and easy to overlook.
 
 ---
-
+"Writeup and proof included in GitHub repo: https://github.com/inkedqt/ctf-writeups/tree/main/Other/PG/Mice"

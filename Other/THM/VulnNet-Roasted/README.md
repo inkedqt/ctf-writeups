@@ -4,7 +4,7 @@
 **Difficulty:** Easy  
 **IP Address:** `10.201.79.171`
 
-![Proof](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/THM/proofs/thm_roasted.png)
+![Proof](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/thm_roasted.png)
 
 ---
 

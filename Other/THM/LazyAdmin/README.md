@@ -172,10 +172,4 @@ nc -lvnp 80
 
 ---
 
-## Snippet for inksec.io (Completed)
-```markdown
-🔓 **LazyAdmin** (THM, Easy, Linux) — Backup leak → MD5 crack → SweetRice admin → File upload → sudo perl → copy.sh abuse → **Root**  
-🧾 Write-up: /CTF-Writeups/Other/THM/LazyAdmin/README.md  
-🖼️ Proof: https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/thm_lazyadmin.png
-```
 

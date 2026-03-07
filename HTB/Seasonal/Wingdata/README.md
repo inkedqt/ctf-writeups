@@ -1,3 +1,4 @@
+
 # 🪶 WingData
 
 > **Difficulty:** Easy | **OS:** Linux | **Release:** HTB Seasonal

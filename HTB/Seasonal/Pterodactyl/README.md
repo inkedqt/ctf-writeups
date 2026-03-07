@@ -1,3 +1,12 @@
+---
+name: Pterodactyl
+difficulty: Medium
+platform: Linux
+status: ✅
+---
+
+## Summary
+A PHP web application box that rewards thorough enumeration before touching an exploit. Getting root requires chaining a lesser-known Polkit quirk with a race condition — patience and two terminals win the day.
 # 🦕 Pterodactyl
 
 > **Difficulty:** Medium | **OS:** Linux | **Release:** HTB Seasonal

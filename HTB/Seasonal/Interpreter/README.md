@@ -1,6 +1,15 @@
+---
+name: Interpreter
+difficulty: Medium
+platform: Linux
+status: ✅
+---
 # 🩸 HTB — Interpreter | Medium | Linux
 
 > No spoilers. Just vibes, nudges, and the occasional raised eyebrow.
+
+## Summary
+This box rewards people who read CVE advisories and aren't afraid to poke databases, read source code, and think creatively about what constitutes a "space."
 
 ---
 ## 📸 Proof
